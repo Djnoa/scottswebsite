@@ -1,0 +1,308 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Monomaniac+One&family=Tilt+Prism&display=swap');
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eee;
+  }
+  
+  .stage {
+    background: black;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .stage-content {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: black;
+    background-image: url(../images/Immersive\ Medias\ logo1.png);
+    height: 100vh;
+    
+  }
+  
+  .stage-content:after {
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    transform: translateY(0.5em);
+    font-size: 1.1em;
+  }
+  
+  .curtain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .curtain-panel {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .curtain-panel .curtain {
+    width: 50%;
+    background-image: url(../images/red-curtain-with-spotlight-opening-scene.jpg);
+    position: relative;
+    transition: transform 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* .curtain-panel .curtain:before {
+    content: attr(data-title);
+    text-align: center;
+    width: 200%;
+    position: absolute;
+    top: 50%;
+    line-height: 0;
+    font-size: 5em;
+    
+  } */
+    
+  
+  
+  .curtain-panel .left-curtain:before {
+    left: 0;
+  }
+  
+  .curtain-panel .right-curtain:before {
+    right: 0;
+  }
+  
+  .curtain-panel .curtain:after {
+    content: '';
+    background-size: 20px 20px;
+    display: block;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .curtain-trigger {
+    visibility: hidden;
+    position: absolute;
+  }
+  
+  .curtain-trigger:checked ~ .left-curtain {
+    transform: translateX(calc(-100% + 2em));
+  }
+  
+  .curtain-trigger:checked ~ .right-curtain {
+    transform: translateX(calc(100% - 2em));
+  }
+
+  .center-text {
+    position: absolute;
+    top: 50%;
+    font-size: 5em;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-50%);
+    background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #6b5f18,
+    transparent
+  );
+  font-family: 'Monomaniac One', sans-serif; ;
+  text-transform: uppercase;
+  font-size: 6em;
+  color: #ffffe6;
+  text-shadow: 0 0 0.6rem #ffffe6, 0 0 1.5rem #fffc65,
+    -0.2rem 0.1rem 1rem #fffc65, 0.2rem 0.1rem 1rem #fffc65,
+    0 -0.5rem 2rem #ffe924, 0 0.5rem 3rem #ffe924;
+  animation: shine 2s forwards, flicker 3s infinite;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #fffde6;
+    text-shadow: 0 0 0.6rem #fffbe6, 0 0 1.5rem #fff065,
+      -0.2rem 0.1rem 1rem #fffc65, 0.2rem 0.1rem 1rem #fcff65,
+      0 -0.5rem 2rem #ffe924, 0 0.5rem 3rem #fffb24;
+  }
+  28%,
+  33% {
+    color: #fcff65;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #fff024;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: #6b6a18;
+    text-shadow: none;
+  }
+  100% {
+    color: #fffde6;
+    text-shadow: 0 0 0.6rem #fffde6, 0 0 1.5rem #fffc65,
+      -0.2rem 0.1rem 1rem #fff065, 0.2rem 0.1rem 1rem #fffc65,
+      0 -0.5rem 2rem #fff024, 0 0.5rem 3rem #fffb24;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+    
+ 
+  
+  .left-curtain .center-text {
+    left: 30%;
+  }
+  
+  .right-curtain .center-text {
+    right: 35%;
+  }
